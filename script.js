@@ -1,7 +1,12 @@
+user = prompt('hi user, please enter your name :')
+
+nameholder = document.getElementById("user")
 counter = document.getElementById('count')
+saves = document.getElementById('saves')
+nameholder.textContent='Hi '+user+', wolcome back !'
 count = 0;
 function update(){
-    counter.innerText=count
+    counter.textContent=count
 }
 function increase() {
     count+=1;
@@ -12,9 +17,12 @@ function decrease(){
     update()
 }
 function reset() {
-    count = 0;
+    saves.textContent = 'Previous saves :'
     update()
 }
 function save() {
-    console.log(count)
+    let countStr = count + ' - '
+    saves.textContent +=countStr
+    count = 0;
+    update()
 }
